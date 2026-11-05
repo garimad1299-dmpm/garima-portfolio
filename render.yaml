@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: garima-portfolio
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=604800
+    domains:
+      - www.garimadandotiya.com
+      - garimadandotiya.com
